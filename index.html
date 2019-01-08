@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Sklep sportowy</title>
+	
+	<style>
+
+	.item{
+		padding: 20px;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+	}
+	
+	.item:hover{
+		transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		box-shadow: 0 0 20px #0888;
+		background-color: #fff;
+	}
+	
+	</style>
+  </head>
+  <body>
+      
+  <!-- koszyk -->
+   <div class="simpleCart_items"></div>  
+<!-- create a checkout button -->
+<a href="javascript:;" class="simpleCart_checkout">Zamów</a> |
+<!-- button to empty the cart -->
+<a href="javascript:;" class="simpleCart_empty">Opróżnij kosz</a>
+      
+      
+      
+<!-- konterent -->
+      
+<div class="container">
+    
+<!-- row 2 -->
+    
+  <div class="row">
+       
+      
+    <div class="col-md-4 item text-center">
+        <div class="simpleCart_shelfItem">	
+            <h2 class="item_name"> Buty sportowe New Balnce </h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img src="img/but.jpg"alt="">
+                    </div>
+                </div> 
+      <div class="row">
+            <div class="col-xs-12">
+                <input type="text" value="1" class="item_Quantity"><br>
+                
+    <span class="item_price">$35.99</span><br>
+                        
+    <a class="item_add btn btn-primary" href="javascript:;"> Dodaj do koszyka </a>                           
+                </div>
+            </div>
+        </div> 
+    </div>         
+      
+    
+      
+
+    <div class="col-md-4 item text-center">
+     <img src="img/hantle.jpg"alt="">
+    </div>
+      
+      
+      
+      
+      
+    <div class="col-md-4 item text-center">
+    <img src="img/mata1.jpg"alt="">
+    </div>
+  </div>
+    
+    
+    
+    
+    <!-- row 2 -->
+    <div class="row">
+    <div class="col-md-4 item text-center">
+    <img src="img/mata2.jpg"alt="">
+    </div>
+        
+        
+        
+        
+    <div class="col-md-4 item text-center">
+     <img src="img/pilka1.jpg"alt="">
+    </div>
+        
+        
+        
+        
+    <div class="col-md-4 item text-center">
+    <img src="img/pilka2.jpg"alt="">
+    </div>
+        
+        
+        
+        
+        
+  </div>
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+    <script src="js/simpleCart.js"></script>
+              <script>
+          simpleCart({
+            checkout: {
+              type: "PayPal",
+              email: "pilz.kornelia@gmail.com"
+            }
+          });
+</script>
+  </body>
+</html>
