@@ -1,5 +1,5 @@
 <?php 
-        include ('comment_crud.php');
+        include ('comment.php');
 	include('functions.php');
 	if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";

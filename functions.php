@@ -25,7 +25,7 @@
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['user']);
-		header("location: ../login.php");
+		header("location: ../login1.php");
 	}
 
 	// REGISTER USER
