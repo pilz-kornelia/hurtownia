@@ -18,6 +18,18 @@
 			<label>Username</label>
 			<input type="text" name="username" value="<?php echo $username; ?>">
 		</div>
+                <div class="input-group">
+			<label>City</label>
+			<input type="text" name="city" value="<?php echo $city; ?>">
+		</div>
+                <div class="input-group">
+			<label>Zipcode</label>
+			<input type="text" name="zipcode" value="<?php echo $zipcode; ?>">
+		</div>
+           	<div class="input-group">
+			<label>Adress</label>
+			<input type="text" name="adress" value="<?php echo $adress; ?>">
+		</div>
 		<div class="input-group">
 			<label>Email</label>
 			<input type="email" name="email" value="<?php echo $email; ?>">
@@ -39,3 +51,6 @@
 	</form>
 </body>
 </html>
+<!-- scripts -->
+<script src="jquery-3.2.1.min.js"></script>
+<script src="ajax.js"></script>
