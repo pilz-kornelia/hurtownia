@@ -1,87 +1,76 @@
-$('document').ready(function () {
-    var username_state = false;
-    var email_state = false;
-    $('#username').on('blur', function () {
-        var username = $('#username').val();
-        if (username == '') {
-            username_state = false;
-            return;
-        }
-        $.ajax({
-            url: 'register.php',
-            type: 'post',
-            data: {
-                'username_check': 1,
-                'username': username,
-            },
-            success: function (response) {
-                if (response == 'taken') {
-                    username_state = false;
-                    $('#username').parent().removeClass();
-                    $('#username').parent().addClass("form_error");
-                    $('#username').siblings("span").text('Sorry... Username already taken');
-                } else if (response == 'not_taken') {
-                    username_state = true;
-                    $('#username').parent().removeClass();
-                    $('#username').parent().addClass("form_success");
-                    $('#username').siblings("span").text('Username available');
-                }
-            }
-        });
+$(document).ready(function(){
+  // save comment to database
+  $(document).on('click', '#submit_btn', function(){
+    var name = $('#name').val();
+    var comment = $('#comment').val();
+    $.ajax({
+      url: 'comment.php',
+      type: 'POST',
+      data: {
+        'save': 1,
+        'name': name,
+        'comment': comment,
+      },
+      success: function(response){
+        $('#name').val('');
+        $('#comment').val('');
+        $('#display_area').append(response);
+      }
     });
-    $('#email').on('blur', function () {
-        var email = $('#email').val();
-        if (email == '') {
-            email_state = false;
-            return;
-        }
-        $.ajax({
-            url: 'register.php',
-            type: 'post',
-            data: {
-                'email_check': 1,
-                'email': email,
-            },
-            success: function (response) {
-                if (response == 'taken') {
-                    email_state = false;
-                    $('#email').parent().removeClass();
-                    $('#email').parent().addClass("form_error");
-                    $('#email').siblings("span").text('Sorry... Email already taken');
-                } else if (response == 'not_taken') {
-                    email_state = true;
-                    $('#email').parent().removeClass();
-                    $('#email').parent().addClass("form_success");
-                    $('#email').siblings("span").text('Email available');
-                }
-            }
-        });
-    });
-
-    $('#reg_btn').on('click', function () {
-        var username = $('#username').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        if (username_state == false || email_state == false) {
-            $('#error_msg').text('Fix the errors in the form first');
-        } else {
-            // proceed with form submission
-            $.ajax({
-                url: 'register.php',
-                type: 'post',
-                data: {
-                    'save': 1,
-                    'email': email,
-                    'username': username,
-                    'password': password,
-                },
-                success: function (response) {
-                    alert('user saved');
-                    $('#username').val('');
-                    $('#email').val('');
-                    $('#password').val('');
-                }
-            });
-        }
-    });
+  });
+  // delete from database
+  $(document).on('click', '.delete', function(){
+  	var id = $(this).data('id');
+  	$clicked_btn = $(this);
+  	$.ajax({
+  	  url: 'comment.php',
+  	  type: 'GET',
+  	  data: {
+    	'delete': 1,
+    	'id': id,
+      },
+      success: function(response){
+        // remove the deleted comment
+        $clicked_btn.parent().remove();
+        $('#name').val('');
+        $('#comment').val('');
+      }
+  	});
+  });
+  var edit_id;
+  var $edit_comment;
+  $(document).on('click', '.edit', function(){
+  	edit_id = $(this).data('id');
+  	$edit_comment = $(this).parent();
+  	// grab the comment to be editted
+  	var name = $(this).siblings('.display_name').text();
+  	var comment = $(this).siblings('.comment_text').text();
+  	// place comment in form
+  	$('#name').val(name);
+  	$('#comment').val(comment);
+  	$('#submit_btn').hide();
+  	$('#update_btn').show();
+  });
+  $(document).on('click', '#update_btn', function(){
+  	var id = edit_id;
+  	var name = $('#name').val();
+  	var comment = $('#comment').val();
+  	$.ajax({
+      url: 'comment.php',
+      type: 'POST',
+      data: {
+      	'update': 1,
+      	'id': id,
+      	'name': name,
+      	'comment': comment,
+      },
+      success: function(response){
+      	$('#name').val('');
+      	$('#comment').val('');
+      	$('#submit_btn').show();
+      	$('#update_btn').hide();
+      	$edit_comment.replaceWith(response);
+      }
+  	});		
+  });
 });
