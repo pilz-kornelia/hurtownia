@@ -76,6 +76,9 @@
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
 			$password = md5($password_1);//encrypt the password before saving in the database
+                        $adress   = md5($adress);
+                        $city     = md5($city);
+                        $zipcode  = md5($zipcode);
 
 			if (isset($_POST['user_type'])) {
 				$user_type = e($_POST['user_type']);
