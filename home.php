@@ -1,12 +1,3 @@
-<?php
-include ('comment.php');
-include('functions.php');
-if (!isLoggedIn()) {
-    $_SESSION['message'] = "You must log in first";
-    header('location: index2.php');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -79,26 +70,11 @@ if (!isLoggedIn()) {
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="koszyk"><a href="#" data-toggle="modal" data-target="#myModal">Koszyk (<span class="simpleCart_quantity"></span>)</a></li>
                                 </ul>
-
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li>
-                                            <?php
-                                            if (isset($_SESSION['success'])) {
-                                                $usrname = ucfirst($_SESSION['user']['username']);
-                                                echo $_SESSION['success'] = "<a href='index.php?logout='1''>Wyloguj($usrname)</a>";
-                                                unset($_SESSION['success']);
-                                            } else {
-                                                $link_address = 'index2.php';
-                                                echo "<a href='$link_address'>Logowanie/Rejestracja</a>";
-                                            }
-                                            ?>
-                                        </li>
-                                    </ul>
-
-
-                                </div><!-- /.navbar-collapse -->
-                            </div><!-- /.container-fluid -->
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="login"><a href="#" data-toggle="modal" data-target="#login">Logowanie/rejstracja</a></li>
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
                     </nav>
 
 
@@ -182,6 +158,25 @@ if (!isLoggedIn()) {
                     </div>
 
                     <!--PHP login-->     
+                    <?php require_once 'process.php'; ?>
+                    <div class="row justify-content-center">
+                        <form action="process.php" method="POST">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" value="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input type="text" name="location" class="form-control"  value="Enter your location">
+                            </div>
+                            <div class="form-group">
+
+                                <button type="button" class="btn btn-warning">Save</button>
+
+
+                            </div>
+                        </form>
+                    </div>  
                 </div><!-- /hideIfEmpty -->
             </div><!-- /modal-content -->
         </div><!-- /modal-dialog -->
