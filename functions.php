@@ -86,7 +86,7 @@ function register() {
         $zipcode = md5($zipcode);
         $first_name = md5($first_name);
         $last_name = md5($last_name);
-        $password = e($_POST['password']);
+
 
         if (isset($_POST['user_type'])) {
             $user_type = e($_POST['user_type']);
@@ -122,7 +122,7 @@ function getUserById($id) {
 
 // LOGIN USER
 function login() {
-    global $db, $username, $errors, $username_err;
+    global $db, $username, $errors;
 
     // grap form values
     $username = e($_POST['username']);
