@@ -2,7 +2,7 @@
 include ('comment.php');
 include('functions.php');
 if (!isLoggedIn()) {
-    $_SESSION['message'] = "You must log in first";
+   $msg=$_SESSION['message'] = "You must log in first";
     header('location: index2.php');
 }
 ?>
@@ -84,8 +84,8 @@ if (!isLoggedIn()) {
                                     <ul class="nav navbar-nav navbar-right">
                                         <li>
                                             <?php
-                                            if (isset($_SESSION['success'])) {
-                                                $usrname = ucfirst($_SESSION['user']['username']);
+                                            if (isset($_SESSION['user'])) {
+                                            $usrname = ucfirst($_SESSION['user']['username']);
                                                 echo $_SESSION['success'] = "<a href='index.php?logout='1''>Wyloguj($usrname)</a>";
                                                 unset($_SESSION['success']);
                                             } else {

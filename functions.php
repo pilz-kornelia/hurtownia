@@ -113,7 +113,7 @@ function register() {
 // return user array from their id
 function getUserById($id) {
     global $db;
-    $query = "SELECT * FROM users WHERE id=" . $id;
+    $query = "SELECT username FROM users WHERE id=" . $id;
     $result = mysqli_query($db, $query);
 
     $user = mysqli_fetch_assoc($result);
@@ -161,7 +161,7 @@ function login() {
 
                 $_SESSION['user'] = $logged_in_user;
                 $_SESSION['success'] = "You are now logged in";
-                header('location: admin/index.php');
+                header('location: index.php');
             } else {
                 $_SESSION['user'] = $logged_in_user;
                 $_SESSION['success'] = "You are now logged in";

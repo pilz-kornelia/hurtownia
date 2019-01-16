@@ -120,11 +120,11 @@
                                         <input type="text" name="username" class="form-control" id="exampleDropdownFormUsername" value="<?php echo $username; ?>" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormEmail2">Imię</label>
+                                        <label for="exampleDropdownFormEmail2">Nazwa Użytkownika</label>
                                         <input type="text" name="first_name" class="form-control" id="exampleDropdownFormUsername" value="<?php echo $first_name; ?>" placeholder="Imię">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormEmail2">Nazwisko</label>
+                                        <label for="exampleDropdownFormEmail2">Nazwa Użytkownika</label>
                                         <input type="text" name="last_name" class="form-control" id="exampleDropdownFormUsername" value="<?php echo $last_name; ?>" placeholder="Nazwisko">
                                     </div>
                                     <div class="form-group">
