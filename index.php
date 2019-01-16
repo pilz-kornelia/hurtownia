@@ -95,6 +95,9 @@ if (!isLoggedIn()) {
                                             ?>
                                         </li>
                                     </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="opinie.php" class="nav-link">Opinie</a></li>
+                                    </ul>
 
 
                                 </div><!-- /.navbar-collapse -->
