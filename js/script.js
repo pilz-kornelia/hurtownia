@@ -71,14 +71,14 @@ function GetUserDetails(id) {
                 var user = JSON.parse(data);
                 // Assing existing values to the modal popup fields
 
-                $("#update_username").val();
-                $("#update_first_name").val();
-                $("#update_last_name").val();
-                $("#update_city").val();
-                $("#update_zipcode").val();
-                $("#update_adress").val();
-                $("#update_email").val();
-                $("#update_password").val();
+                $("#update_username").val(user.username);
+                $("#update_first_name").val(user.first_name);
+                $("#update_last_name").val(user.last_name);
+                $("#update_city").val(user.city);
+                $("#update_zipcode").val(user.zipcode);
+                $("#update_adress").val(user.adress);
+                $("#update_email").val(user.email);
+                $("#update_password").val(user.password);
             }
     );
     // Open modal popup

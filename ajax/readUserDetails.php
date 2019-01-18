@@ -3,13 +3,13 @@
 include("db_connection.php");
  
 // check request
-if(isset($_POST['id']) && isset($_POST['id']) != "")
+if(isset($_POST['id']) != "")
 {
     // get User ID
     $user_id = $_POST['id'];
  
     // Get User Details
-    $query = "SELECT * FROM users WHERE id = '$id'";
+    $query = "SELECT * FROM users WHERE id = '$user_id'";
     if (!$result = mysqli_query($db, $query)) {
         exit(mysqli_error($db));
     }

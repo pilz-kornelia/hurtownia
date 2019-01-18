@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +9,16 @@
         <title>SKLEP SPORTOWY</title>
 
         <!-- Bootstrap -->
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,40 +31,11 @@
 
     <body>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <nav class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="#">SKLEP SPORTOWY</a>
-                            </div>
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.php" class="nav-link">Strona główna</a></li>
-                                </ul>
-
-                            </div><!-- /.navbar-collapse -->
-                        </div><!-- /.container-fluid -->
-                    </nav>
-                    <p>&nbsp;</p>
-                </div><!-- /col-sm-12 -->
-            </div><!-- /row -->
-        </div><!-- /container -->
         <!-- Content Section -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Panel administratora/dodawanie/usuwanie/aktualizowanie</h1>
+                    <h1>Demo: PHP and MySQL CRUD Operations using Jquery</h1>
                 </div>
             </div>
             <div class="row">
@@ -88,20 +66,40 @@
                         <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
                     </div>
                     <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username">usr</label>
+                            <input type="text" id="username" placeholder="First Name" class="form-control"/>
+                        </div>
 
                         <div class="form-group">
                             <label for="first_name">First Name</label>
                             <input type="text" id="first_name" placeholder="First Name" class="form-control"/>
                         </div>
-
                         <div class="form-group">
                             <label for="last_name">Last Name</label>
-                            <input type="text" id="last_name" placeholder="Last Name" class="form-control"/>
+                            <input type="text" id="last_name" placeholder="First Name" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" placeholder="First Name" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipcode">zip</label>
+                            <input type="text" id="zipcode" placeholder="First Name" class="form-control"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adress">adrss</label>
+                            <input type="text" id="adress" placeholder="Last Name" class="form-control"/>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="text" id="email" placeholder="Email Address" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="text" id="password" placeholder="First Name" class="form-control"/>
                         </div>
 
                     </div>
@@ -125,18 +123,36 @@
                     <div class="modal-body">
 
                         <div class="form-group">
+                            <label for="update_username">First Name</label>
+                            <input type="text" id="update_username" placeholder="usr " class="form-control"/>
+                        </div>update_first_name
+                        <div class="form-group">
                             <label for="update_first_name">First Name</label>
                             <input type="text" id="update_first_name" placeholder="First Name" class="form-control"/>
                         </div>
-
                         <div class="form-group">
                             <label for="update_last_name">Last Name</label>
                             <input type="text" id="update_last_name" placeholder="Last Name" class="form-control"/>
                         </div>
-
+                        <div class="form-group">
+                            <label for="update_city">First Name</label>
+                            <input type="text" id="update_city" placeholder="city" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="update_zipcode">First Name</label>
+                            <input type="text" id="update_zipcode" placeholder="zip" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="update_adress">First Name</label>
+                            <input type="text" id="update_adress" placeholder="adrss" class="form-control"/>
+                        </div>
                         <div class="form-group">
                             <label for="update_email">Email Address</label>
                             <input type="text" id="update_email" placeholder="Email Address" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="update_password">First Name</label>
+                            <input type="text" id="update_password" placeholder="paswrd" class="form-control"/>
                         </div>
 
                     </div>
@@ -148,21 +164,8 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-        <script src="/js/script.js"></script>
-        <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
-
-
+        <script src="script.js"></script>
     </body>
 
 </html>
+

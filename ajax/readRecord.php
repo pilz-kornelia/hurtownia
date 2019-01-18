@@ -10,6 +10,7 @@ include ('db_connection.php');
                         <tr>
                             <th>No.</th>
                             <th>Username</th>
+                            <th>First Name</th>
                             <th>Last Name</th>
                             <th>Miasto</th>
                             <th>Kod Pocztowy</th>
@@ -20,11 +21,12 @@ include ('db_connection.php');
                             <th>Delete</th>
                         </tr>';
  
-    $query = "SELECT * FROM users";
+   $query = "SELECT * FROM users";
  
-    if (!$result = mysqli_query($db, $query)) {
-        exit(mysqli_error($db));
+    if (!$result = mysqli_query($con, $query)) {
+        exit(mysqli_error($con));
     }
+ 
  
     // if query results contains rows then featch those rows 
     if(mysqli_num_rows($result) > 0)
@@ -65,5 +67,4 @@ include ('db_connection.php');
         }
 
     
-  ?>
-    
+  ?>  
